@@ -9,29 +9,37 @@ class HomePage extends StatefulWidget {
 
 class _MyWidgetState extends State<HomePage> {
   var number1 = 0, number2 = 0, result = 0;
-  final TextEditingController num1 = TextEditingController(text: "0");
-  final TextEditingController num2 = TextEditingController(text: "0");
+  final TextEditingController num1 = TextEditingController();
+  final TextEditingController num2 = TextEditingController();
   void doAdd() {
     setState(() {
-      result = number1 + number1;
+      number1 = int.parse(num1.text);
+      number2 = int.parse(num2.text);
+      result = number1 + number2;
     });
   }
 
   void doSub() {
     setState(() {
-      result = number1 + number1;
+      number1 = int.parse(num1.text);
+      number2 = int.parse(num2.text);
+      result = number1 - number2;
     });
   }
 
   void doMult() {
     setState(() {
-      result = number1 + number1;
+      number1 = int.parse(num1.text);
+      number2 = int.parse(num2.text);
+      result = number1 * number2;
     });
   }
 
   void doDiv() {
     setState(() {
-      result = number1 + number1;
+      number1 = int.parse(num1.text);
+      number2 = int.parse(num2.text);
+      result = (number2 == 0) ? 0 : (number1 ~/ number2);
     });
   }
 
